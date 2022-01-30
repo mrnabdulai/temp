@@ -1,2 +1,20 @@
 [1/21, 8:32 AM] Abdullah MTN: https://audiomack.com/blaqvibemusicinc97/song/for-da-money
 [1/28, 10:02 AM] Abdullah MTN: https://audiomack.com/exo-xan/song/bonita-prod-by-neddybeats-bennys-legacy-mixed-mastered-by-neddybeats
+
+
+
+const audio = document.querySelector("audio");
+audio.addEventListener("play", function (event) {
+  const trackTitle = document.querySelector(
+    " .PlayerArtistInfo-module__heading--2GwgO strong"
+  );
+  // console.log(typeof(trackTitle.innerText));
+
+  if (trackTitle.innerText == "Goodbyes") {
+    console.log("The text is the required song ");
+    document.getElementsByClassName("player__control--forwards")[0].click();
+  } else {
+    console.log("The song is another song");
+    document.getElementsByClassName("player__control--back")[0].click();
+  }
+});
